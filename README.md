@@ -1,4 +1,4 @@
-Challenge: Compile the cgreeter c library, generate interop bindings within Kotlin/Native, and invoke the library function in a Kotlin file. 
+Challenge: Compile the cgreeter c library, generate interop bindings within Kotlin/Native, and invoke the c library function in a Kotlin file. 
 
 ## Step 0: Compile kgreeter
 0. Download CLion: [https://www.jetbrains.com/clion/download](https://www.jetbrains.com/clion/download)
