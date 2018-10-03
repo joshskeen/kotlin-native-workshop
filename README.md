@@ -3,11 +3,10 @@ Challenge: Compile the greeter library, generate interop bindings for Kotlin/Nat
 ## Step 0: Compile kgreeter
 0. Download CLion: [https://www.jetbrains.com/clion/download](https://www.jetbrains.com/clion/download)
 1. clone the project repo, and check out branch `challenge-1`: 
-	2. 		git clone `url`
-	3. 		git checkout `challenge-1`
+	2. 		git clone `https://github.com/mutexkid/kotlin-native-workshop`
 2. open a terminal and go to the root directory of the repo. type `./gradlew tasks` to list the available tasks for the project. Notice the following output: 
 	
-	```
+	```text
 	Build tasks
 	-----------
 	assemble - Assembles the outputs of this project.
@@ -19,6 +18,7 @@ Challenge: Compile the greeter library, generate interop bindings for Kotlin/Nat
 	compileKonanKgreeterMacos_x64 - Build the Kotlin/Native executable 'compileKonanKgreeterMacos_x64' for target 'macos_x64'
 	
 	```
+	
 4. run the task `compileKonanKgreeterMacbook` by entering `./gradlew compileKonanKgreeterMacbook` to create a native binary for macbook. Note that on the first time running, the kotlin/native compiler and cinterop tools will be downloaded - wait patiently!
 5. Notice that the `build` directory has been created. Run the native binary that was compiled by entering:  `./build/konan/bin/macos_x64/kgreeter.kexe`.
 6.  Observe the following output: 
@@ -71,15 +71,17 @@ Challenge: Compile the greeter library, generate interop bindings for Kotlin/Nat
 
 3. Notice that `cgreeter.def` is referenced in the build.gradle but doesn't exist yet. Time to fix that. Create a file called `cgreeter.def` in the project root, and add the following: 
 
+	
 	`cgreeter.def:`
 	
+	```text
+	package = cgreeter
+	headers = cgreeter.h
+	compilerOpts=-I./src/libs/cgreeter/
+	libraryPaths =./src/libs/cgreeter/
+	staticLibraries = libcgreeter.a 
 	```
-package = cgreeter
-headers = cgreeter.h
-compilerOpts=-I./src/libs/cgreeter/
-libraryPaths =./src/libs/cgreeter/
-staticLibraries = libcgreeter.a 
-	```
+	
 	The definition specifies the location of the header and binary for the cgreeter library so that the cinterop tool can generate bindings.
 
 4. Verify the cinterop config works correctly by running `./gradlew compileKonanKgreeterMacbook`. Notice that a new step was added to the gradle output: `> :compileKonanCgreeterMacos_x64`. In this step, the interop bindings were generated for the c library and added to the project (under `build/konan/bin/libs/macos_x64/cgreeter.klib-build` )
