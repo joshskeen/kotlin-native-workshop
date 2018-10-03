@@ -3,14 +3,7 @@ plugins {
 }
 
 konanArtifacts {
-           
-    interop('cgreeter', targets: ['macbook']) {
-       defFile 'cgreeter.def'
-    }
     program('kgreeter', targets: ['macbook']) {
         srcDir "${project.rootDir}/src/main/kotlin"
-        libraries {
-            artifact 'cgreeter'
-        }
     }
 }

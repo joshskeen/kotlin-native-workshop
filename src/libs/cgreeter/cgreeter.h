@@ -1,1 +1,0 @@
-void sayHelloInC(char *name);
