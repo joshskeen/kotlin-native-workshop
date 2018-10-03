@@ -1,0 +1,5 @@
+package = cgreeter
+headers = cgreeter.h
+compilerOpts=-I./src/libs/cgreeter/
+libraryPaths =./src/libs/cgreeter/
+staticLibraries = libcgreeter.a 
