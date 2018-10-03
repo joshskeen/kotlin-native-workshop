@@ -2,8 +2,7 @@ Challenge: Compile the greeter library, generate interop bindings for Kotlin/Nat
 
 ## Step 0: Compile kgreeter
 0. Download CLion: [https://www.jetbrains.com/clion/download](https://www.jetbrains.com/clion/download)
-1. clone the project repo, and check out branch `challenge-1`: 
-	2. 		git clone `https://github.com/mutexkid/kotlin-native-workshop`
+1. clone the project repo: `git clone https://github.com/mutexkid/kotlin-native-workshop`
 2. open a terminal and go to the root directory of the repo. type `./gradlew tasks` to list the available tasks for the project. Notice the following output: 
 	
 	```text
