@@ -87,7 +87,7 @@ Challenge: Compile the greeter library, generate interop bindings for Kotlin/Nat
 
 ## Step 3: Call the interopped c library
 
-1. The interop stubs have been created for the c libary. Now you can call the library from Kotlin/Native. Add the following to hello.kt: 
+1. The interop stubs have been created for the c library. Now you can call the library from Kotlin/Native. Add the following to hello.kt: 
 
 	`hello.kt`
 	
