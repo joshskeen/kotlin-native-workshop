@@ -82,6 +82,8 @@ dkms.conf
 
 # CMake
 cmake-build-*/
+# Make
+.Makefile
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
