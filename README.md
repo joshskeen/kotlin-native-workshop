@@ -92,7 +92,6 @@ Challenge: Compile the cgreeter c library, generate interop bindings within Kotl
 	`hello.kt`
 	
 	```kotlin
-	import kotlinx.cinterop.cValuesOf
 	import kotlinx.cinterop.cstr
 	
 	fun main(args: Array<String>) {
