@@ -83,7 +83,7 @@ Challenge: Compile the cgreeter c library, generate interop bindings within Kotl
 	
 	The definition specifies the location of the header and binary for the cgreeter library so that the cinterop tool can generate bindings.
 
-4. Verify the cinterop config works correctly by running `./gradlew compileKonanKgreeterMacbook`. Notice that a new step was added to the gradle output: `> :compileKonanCgreeterMacos_x64`. In this step, the interop bindings were generated for the c library and added to the project (under `build/konan/bin/libs/macos_x64/cgreeter.klib-build` )
+4. Verify the cinterop config works correctly by running `./gradlew compileKonanKgreeterMacbook`. Notice that a new step was added to the gradle output: `> :compileKonanCgreeterMacos_x64`. In this step, the interop bindings were generated for the c library and added to the project (under `build/konan/libs/macos_x64/cgreeter.klib-build` )
 
 ## Step 3: Call the interopped c library
 
